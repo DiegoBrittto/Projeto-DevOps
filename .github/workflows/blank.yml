@@ -34,3 +34,25 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+
+
+  deploy-hmg:
+    runs-on: ubunto-latest
+    environment:
+      name: hmg
+      url: 'diegobrittto.com'
+    needs: CI
+    steps:
+      - name: Run a one-line scripty
+        run: echo Deploy, hmg!
+
+  deploy-drd:
+    runs-on: ubunto-latest
+    environment:
+      name: drd
+      url: 'diegobrittto.com'
+    needs: deploy-hmg
+    steps:
+      - name: Run a one-line scripty
+        run: echo Deploy, drd!
