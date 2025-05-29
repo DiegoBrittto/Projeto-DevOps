@@ -16,7 +16,7 @@ jobs:
       url: 'diegobrittto.com'
     needs: build
     steps:
-      - name: Run a one-line scripty
+      - name: Run a one-line script
         run: echo Deploy, Dev!
 
   deploy-hmg:
@@ -32,7 +32,7 @@ jobs:
   deploy-drd:
     runs-on: ubunto-latest
     environment:
-      name: hmg
+      name: drd
       url: 'diegobrittto.com'
     needs: deploy-hmg
     steps:
